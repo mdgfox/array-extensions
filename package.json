@@ -1,0 +1,41 @@
+{
+  "name": "@mdgfox/array-extensions",
+  "version": "1.0.0",
+  "description": "Lightweight TypeScript extensions for Array prototype: shuffle, random, and deep copy.",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "typescript",
+    "array",
+    "extensions",
+    "shuffle",
+    "random",
+    "prototype"
+  ],
+  "homepage": "https://github.com/mdgfox/array-extensions#readme",
+  "bugs": {
+    "url": "https://github.com/mdgfox/array-extensions/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdgfox/array-extensions.git"
+  },
+  "license": "MIT",
+  "author": "Alex Khmelev <alex.khmelev.dev@gmail.com> (https://github.com/mdgfox)",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc && terser dist/index.js -o dist/index.js",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "terser": "^5.46.1",
+    "typescript": "^6.0.2"
+  }
+}
