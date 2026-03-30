@@ -1,6 +1,6 @@
-# @mdgfox/array-extensions
+# @mdgfox/array-extensions [![npm version](https://badge.fury.io/js/@mdgfox%2Farray-extensions.svg)](https://www.npmjs.com/package/@mdgfox/array-extensions)
 
-Lightweight TypeScript extensions for the Array prototype. Adds `shuffle`, `random`, and `randomDeepCopy` methods.
+Lightweight TypeScript extensions for the Array prototype. Adds `shuffle`, `random`, and `randomDeepCopy` methods. 
 
 ## Installation
 
