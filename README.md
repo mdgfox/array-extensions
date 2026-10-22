@@ -1,4 +1,4 @@
-# @mdgfox/array-extensions [![npm version](https://badge.fury.io/js/@mdgfox%2Farray-extensions.svg)](https://www.npmjs.com/package/@mdgfox/array-extensions)
+# @mdgfox/array-extensions [![npm version](https://badge.fury.io/js/@mdgfox%2Farray-extensions.svg)](https://www.npmjs.com/package/@mdgfox/array-extensions) [![npm downloads](https://img.shields.io/npm/dt/%40mdgfox%2Farray-extensions)](https://www.npmjs.com/package/@mdgfox/array-extensions)
 
 Lightweight TypeScript extensions for the Array prototype. Adds powerful utility methods for everyday array manipulation.
 
