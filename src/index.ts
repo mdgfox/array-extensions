@@ -1,7 +1,9 @@
 declare global {
     interface Array<T> {
+        chunk(size: number): T[][];
         compact(): Exclude<T, null | undefined>[];
         move(from: number, to: number): T[];
+        partition(predicate: (item: T, index: number, array: T[]) => boolean): [T[], T[]];
         randomDeepCopy(): T | undefined;
         random(): T | undefined;
         shuffle(): T[];
@@ -21,6 +23,15 @@ const define = (name: keyof Array<any>, fn: Function) => {
     }
 };
 
+define('chunk', function <T>(this: T[], size: number): T[][] {
+    if (!Number.isInteger(size) || size < 1) return [];
+    const result: T[][] = [];
+    for (let i = 0; i < this.length; i += size) {
+        result.push(this.slice(i, i + size));
+    }
+    return result;
+});
+
 define('compact', function <T>(this: T[]): Exclude<T, null | undefined>[] {
     return this.filter(item => item !== null && item !== undefined) as Exclude<T, null | undefined>[];
 });
@@ -32,6 +43,15 @@ define('move', function <T>(this: T[], from: number, to: number): T[] {
     const [item] = this.splice(start, 1);
     this.splice(end, 0, item);
     return this;
+});
+
+define('partition', function <T>(this: T[], predicate: (item: T, index: number, array: T[]) => boolean): [T[], T[]] {
+    const matched: T[] = [];
+    const rest: T[] = [];
+    this.forEach((item, index) => {
+        (predicate(item, index, this) ? matched : rest).push(item);
+    });
+    return [matched, rest];
 });
 
 define('randomDeepCopy', function <T>(this: T[]): T | undefined {

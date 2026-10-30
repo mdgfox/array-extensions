@@ -39,7 +39,23 @@ const items = [{id: 1}, {id: 2}, {id: 1}];
 items.uniqueBy('id'); // [{id: 1}, {id: 2}]
 ```
 
+```ts
+// Split into chunks
+[1, 2, 3, 4, 5].chunk(2); // [[1, 2], [3, 4], [5]]
+```
+```ts
+// Split by condition
+const users = [{name: 'Anna', active: true}, {name: 'Bob', active: false}];
+const [active, inactive] = users.partition(u => u.active);
+```
+
 ## API
+
+### .chunk(size: number): T[][]
+Returns a new array of chunks of the given size. The last chunk may be smaller. Returns an empty array if size is not a positive integer.
+
+### .partition(predicate: (item: T, index: number, array: T[]) => boolean): [T[], T[]]
+Returns a tuple of two new arrays: elements for which the predicate returned true, and the rest. Does not mutate the original array.
 
 ### .shuffle(): T[]
 Shuffles the array in place using the Fisher–Yates algorithm. Returns the instance for chaining.

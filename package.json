@@ -1,7 +1,7 @@
 {
   "name": "@mdgfox/array-extensions",
-  "version": "1.1.0",
-  "description": "Lightweight TypeScript extensions for Array prototype: shuffle, random, and deep copy.",
+  "version": "1.2.0",
+  "description": "Lightweight TypeScript extensions for Array prototype: shuffle, random, chunk, partition, unique, and more.",
   "files": [
     "dist"
   ],
@@ -11,6 +11,8 @@
     "extensions",
     "shuffle",
     "random",
+    "chunk",
+    "partition",
     "compact",
     "move",
     "unique",
